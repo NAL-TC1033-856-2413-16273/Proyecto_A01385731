@@ -1,0 +1,7 @@
+MEX Aeropuerto_Internacional_Benito_Juarez Ciudad_de_Mexico Mexico
+MTY Aeropuerto_Internacional_Gral_Mariano_EScobedo Monterrey Mexico
+GDL Aeropuerto_Internacional_Miguel_Hidalgo Guadalajara Mexico
+CUN AEropuerto_Internacional_de_Cancun Cancun Mexico
+ORD Aeropuerto_Internacional_O_Hare Chicago EUA
+YUL Aeropuerto_Internacional_Pierre_Elliott_Trudeau Montreal Canada
+CDG Aeropuerto_Internacional_de_Paris_Charles_de_Gaulle Paris Francia
