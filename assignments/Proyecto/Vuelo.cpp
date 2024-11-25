@@ -1,14 +1,15 @@
-#include "vuelo.hpp"
+#include "Vuelo.hpp"
+#include <iostream>
 
-// Constructor por defecto
-Vuelo::Vuelo() : ID(""), destino(), aerolinea(""), numPas(0), salidaEstim(), salidaReal(), estatus(1) {}
+// Constructor default
+Vuelo::Vuelo() : ID(""), destino(), aerolinea(""), numPas(0), estatus(1) {}
 
 // Constructor con parámetros
-Vuelo::Vuelo(string id, Aeropuerto dest, string aero, int numP, Hora salida)
-    : ID(id), destino(dest), aerolinea(aero), numPas(numP), salidaEstim(salida), salidaReal(Hora()), estatus(1) {}
+Vuelo::Vuelo(std::string id, Aeropuerto dest, std::string aero, int numP, Hora salida)
+    : ID(id), destino(dest), aerolinea(aero), numPas(numP), salidaEstim(salida), estatus(1) {}
 
 // Obtener ID
-string Vuelo::getID() const {
+std::string Vuelo::getID() const {
     return ID;
 }
 
@@ -18,7 +19,7 @@ Aeropuerto Vuelo::getDestino() const {
 }
 
 // Obtener aerolínea
-string Vuelo::getAerolinea() const {
+std::string Vuelo::getAerolinea() const {
     return aerolinea;
 }
 
@@ -43,7 +44,7 @@ int Vuelo::getEstatus() const {
 }
 
 // Establecer ID
-void Vuelo::setID(string id) {
+void Vuelo::setID(std::string id) {
     ID = id;
 }
 
@@ -53,7 +54,7 @@ void Vuelo::setDestino(Aeropuerto dest) {
 }
 
 // Establecer aerolínea
-void Vuelo::setAerolinea(string aero) {
+void Vuelo::setAerolinea(std::string aero) {
     aerolinea = aero;
 }
 
@@ -76,3 +77,18 @@ void Vuelo::setSalidaReal(Hora salida) {
 void Vuelo::setEstatus(int est) {
     estatus = est;
 }
+
+// Calcular tiempo de retraso
+int Vuelo::calculaTiempoRetraso() const {
+    int horaRetraso = salidaReal.getHora() - salidaEstim.getHora();
+    int minRetraso = salidaReal.getMin() - salidaEstim.getMin();
+    return (horaRetraso * 60) + minRetraso;
+}
+
+// Imprimir información del vuelo
+void Vuelo::imprime() const {
+    std::cout << "Vuelo ID: " << ID << "\nAerolinea: " << aerolinea
+              << "\nPasajeros: " << numPas << "\nEstatus: " 
+              << (estatus == 1 ? "A tiempo" : "Demorado") << "\n";
+}
+
