@@ -1,5 +1,4 @@
-#ifndef HORA_HPP
-#define HORA_HPP
+#pragma once
 
 class Hora {
 private:
@@ -7,15 +6,13 @@ private:
     int minutos;
 
 public:
-    Hora();                       // Constructor default
-    Hora(int h, int m);           // Constructor con parámetros
-    int getHora() const;          // Obtener hora
-    int getMin() const;           // Obtener minutos
-    void setHora(int h);          // Establecer hora (validado)
-    void setMin(int m);           // Establecer minutos (validado)
-    void imprime() const;         // Imprimir hora en formato 00:00
+    Hora();
+    Hora(int h, int m); 
+    int getHora() const;   
+    int getMin() const;          
+    void setHora(int h); 
+    void setMin(int m);  
+   void imprime() const;  
 };
-
-#endif // HORA_HPP
 
 
